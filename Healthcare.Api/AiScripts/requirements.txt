@@ -1,0 +1,12 @@
+
+flask
+easyocr
+opencv-python
+pillow
+numpy
+tensorflow
+torch
+torchvision
+torchaudio
+kaggle
+pandas
