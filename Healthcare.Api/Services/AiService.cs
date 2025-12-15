@@ -47,7 +47,7 @@ namespace Healthcare.Api.Services
 
             _logger.LogInformation("Analyzing document with length: {Length}", documentText.Length);
             // Simulate AI analysis
-            return Task.FromResult($"AI Analysis Result: Document determined to be relevant. Tokens found: {documentText.Split(' ').Length}");
+            return $"AI Analysis Result: Document determined to be relevant. Tokens found: {documentText.Split(' ').Length}";
         }
 
         public async Task TriggerTrainingAsync(string documentText, string documentType)
