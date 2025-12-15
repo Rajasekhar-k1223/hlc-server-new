@@ -6,7 +6,7 @@ import os
 
 # Initialize reader once to save time on subsequent calls if kept alive
 # For this script, it initializes every time it's called
-reader = easyocr.Reader(['en'], gpu=False) # Set gpu=True if CUDA is available
+reader = easyocr.Reader(['en'], gpu=False, verbose=False) # Set gpu=True if CUDA is available
 
 def extract_text(file_path):
     try:

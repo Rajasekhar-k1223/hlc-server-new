@@ -1,0 +1,8 @@
+[bB]in/
+[oO]bj/
+.vs/
+.vscode/
+*.user
+*.lock.json
+*.suo
+*.log
