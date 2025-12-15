@@ -1,8 +1,60 @@
 [
   {
+    "ContainingType": "Healthcare.Api.Controllers.AiController",
+    "Method": "GetTrainingHistory",
+    "RelativePath": "api/Ai/training-history",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[Healthcare.Core.Entities.TrainingLog, Healthcare.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Healthcare.Api.Controllers.AiController",
+    "Method": "LogTrainingResult",
+    "RelativePath": "api/Ai/training-log",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "log",
+        "Type": "Healthcare.Core.Entities.TrainingLog",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Healthcare.Api.Controllers.DocumentController",
     "Method": "UploadDocument",
     "RelativePath": "api/Document/upload",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "file",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Healthcare.Api.Controllers.MedicalRecordsController",
+    "Method": "UploadMedicalRecord",
+    "RelativePath": "api/medical-records/upload",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -75,7 +127,7 @@
   },
   {
     "ContainingType": "Program\u002B\u003C\u003Ec__DisplayClass0_0",
-    "Method": "\u003C\u003CMain\u003E$\u003Eb__3",
+    "Method": "\u003C\u003CMain\u003E$\u003Eb__5",
     "RelativePath": "weatherforecast",
     "HttpMethod": "GET",
     "IsController": false,

@@ -12,7 +12,15 @@ builder.Services.AddSwaggerGen();
 // Register App Services
 // Register App Services
 builder.Services.AddScoped<Healthcare.Api.Services.IOcrService, Healthcare.Api.Services.OcrService>();
+builder.Services.AddHttpClient<Healthcare.Api.Services.IAiService, Healthcare.Api.Services.AiService>();
 builder.Services.AddScoped<Healthcare.Api.Services.IAiService, Healthcare.Api.Services.AiService>();
+
+// MongoDB
+var mongoSettings = builder.Configuration.GetSection("MongoDbSettings");
+builder.Services.AddSingleton<MongoDB.Driver.IMongoClient>(sp => 
+    new MongoDB.Driver.MongoClient(builder.Configuration.GetConnectionString("MongoConnection")));
+builder.Services.AddScoped<MongoDB.Driver.IMongoDatabase>(sp => 
+    sp.GetRequiredService<MongoDB.Driver.IMongoClient>().GetDatabase(mongoSettings["DatabaseName"]));
 
 builder.Services.AddAuthentication(Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -36,7 +44,7 @@ builder.Services.AddCors(options =>
 });
 
 builder.Services.AddDbContext<Healthcare.Api.Data.AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
