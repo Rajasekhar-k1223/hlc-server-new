@@ -11,6 +11,12 @@ namespace Healthcare.Core.Entities
         public string? Type { get; set; } // e.g., Provider, Payer, Supplier
         public string? Identifier { get; set; } // NPI or similar
 
+        public string Address { get; set; } = string.Empty;
+        public string Phone { get; set; } = string.Empty;
+        public string Email { get; set; } = string.Empty;
+        public string Status { get; set; } = "Active";
+        public string ImageUrl { get; set; } = string.Empty;
+
         // Navigation
         public ICollection<User> Users { get; set; } = new List<User>();
     }

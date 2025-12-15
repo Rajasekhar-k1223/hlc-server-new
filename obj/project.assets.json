@@ -1812,9 +1812,21 @@
           "build/Tesseract.targets": {}
         }
       },
+      "ZstdSharp.Port/0.7.3": {
+        "type": "package",
+        "compile": {
+          "lib/net7.0/ZstdSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net7.0/ZstdSharp.dll": {}
+        }
+      },
       "Healthcare.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "MongoDB.Driver": "3.5.2"
+        },
         "compile": {
           "bin/placeholder/Healthcare.Core.dll": {}
         },
@@ -4953,6 +4965,24 @@
         "x86/tesseract50.dll"
       ]
     },
+    "ZstdSharp.Port/0.7.3": {
+      "sha512": "U9Ix4l4cl58Kzz1rJzj5hoVTjmbx1qGMwzAcbv1j/d3NzrFaESIurQyg+ow4mivCgkE3S413y+U9k4WdnEIkRA==",
+      "type": "package",
+      "path": "zstdsharp.port/0.7.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net461/ZstdSharp.dll",
+        "lib/net5.0/ZstdSharp.dll",
+        "lib/net6.0/ZstdSharp.dll",
+        "lib/net7.0/ZstdSharp.dll",
+        "lib/netcoreapp3.1/ZstdSharp.dll",
+        "lib/netstandard2.0/ZstdSharp.dll",
+        "lib/netstandard2.1/ZstdSharp.dll",
+        "zstdsharp.port.0.7.3.nupkg.sha512",
+        "zstdsharp.port.nuspec"
+      ]
+    },
     "Healthcare.Core/1.0.0": {
       "type": "project",
       "path": "Healthcare.Core/Healthcare.Core.csproj",
@@ -4962,7 +4992,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BCrypt.Net-Next >= 4.0.3",
-      "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj",
+      "Healthcare.Core >= 1.0.0",
       "Hl7.Fhir.R4 >= 5.11.2",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.13",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.13",
@@ -4974,23 +5004,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rajasekhar\\.nuget\\packages\\": {},
+    "C:\\Users\\k.rajasekhar\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\server\\Healthcare.Api.csproj",
-      "projectName": "Healthcare.Api",
-      "projectPath": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\server\\Healthcare.Api.csproj",
+      "projectUniqueName": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\hlc-server-new.csproj",
+      "projectName": "hlc-server-new",
+      "projectPath": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\hlc-server-new.csproj",
       "packagesPath": "C:\\Users\\k.rajasekhar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\server\\obj\\",
+      "outputPath": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rajasekhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\k.rajasekhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5006,8 +5036,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\server\\Healthcare.Core\\Healthcare.Core.csproj": {
-              "projectPath": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\server\\Healthcare.Core\\Healthcare.Core.csproj"
+            "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj": {
+              "projectPath": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj"
             }
           }
         }
@@ -5086,19 +5116,8 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1105",
-      "level": "Error",
-      "message": "Unable to find project information for 'C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj'. If you are using Visual Studio, this may be because the project is unloaded or not part of the current solution so run a restore from the command-line. Otherwise, the project file may be invalid or missing targets required for restore.",
-      "libraryId": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj",
-      "targetGraphs": [
-        "net8.0"
-      ]
-    }
-  ]
+  }
 }

@@ -15,11 +15,13 @@ namespace Healthcare.Api.Controllers
     {
         private readonly AppDbContext _context;
         private readonly IConfiguration _configuration;
+        private readonly Services.IAuditService _auditService;
 
-        public AuthController(AppDbContext context, IConfiguration configuration)
+        public AuthController(AppDbContext context, IConfiguration configuration, Services.IAuditService auditService)
         {
             _context = context;
             _configuration = configuration;
+            _auditService = auditService;
         }
 
         [Route("register")]
@@ -43,6 +45,7 @@ namespace Healthcare.Api.Controllers
 
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
+            await _auditService.LogAsync("Register", $"New user registered: {request.Email}", user.Id.ToString());
 
             return Ok("User registered successfully.");
         }
@@ -54,10 +57,12 @@ namespace Healthcare.Api.Controllers
             var user = await _context.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
             if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
             {
+                await _auditService.LogAsync("Login Failed", $"Failed login attempt for {request.Email}");
                 return Unauthorized("Invalid credentials.");
             }
 
             var token = CreateToken(user);
+            await _auditService.LogAsync("Login Success", $"User logged in: {user.Email}", user.Id.ToString());
             return Ok(new { Token = token, Role = user.Role.ToString(), Name = user.FullName });
         }
 

@@ -12,8 +12,10 @@ builder.Services.AddSwaggerGen();
 // Register App Services
 // Register App Services
 builder.Services.AddScoped<Healthcare.Api.Services.IOcrService, Healthcare.Api.Services.OcrService>();
-builder.Services.AddHttpClient<Healthcare.Api.Services.IAiService, Healthcare.Api.Services.AiService>();
-builder.Services.AddScoped<Healthcare.Api.Services.IAiService, Healthcare.Api.Services.AiService>();
+builder.Services.AddHttpClient<Healthcare.Api.Services.IAiService, Healthcare.Api.Services.AiService>()
+    .ConfigureHttpClient(client => client.DefaultRequestHeaders.Add("ngrok-skip-browser-warning", "true"));
+// builder.Services.AddScoped<Healthcare.Api.Services.IAiService, Healthcare.Api.Services.AiService>(); // Removed duplicate
+builder.Services.AddScoped<Healthcare.Api.Services.IAuditService, Healthcare.Api.Services.AuditService>();
 
 // MongoDB
 var mongoSettings = builder.Configuration.GetSection("MongoDbSettings");
