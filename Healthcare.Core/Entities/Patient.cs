@@ -16,5 +16,14 @@ namespace Healthcare.Core.Entities
         public string? MRN { get; set; } // Medical Record Number
 
         public Guid? ManagingOrganizationId { get; set; } // The primary provider org
+
+        // Clinical Snapshot (Denormalized for list view)
+        public string Condition { get; set; } = "Healthy Checkup";
+        public string Status { get; set; } = "Stable"; // Stable, Critical, etc.
+        public DateTime? LastVisit { get; set; }
+        
+        // Vitals Snapshot
+        public string BloodPressure { get; set; } = "120/80";
+        public int HeartRate { get; set; } = 70;
     }
 }

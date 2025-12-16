@@ -599,23 +599,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Rajasekhar\\.nuget\\packages\\": {},
+    "C:\\Users\\k.rajasekhar\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\MyWorld\\health\\hlc\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj",
+      "projectUniqueName": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj",
       "projectName": "Healthcare.Core",
-      "projectPath": "D:\\MyWorld\\health\\hlc\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj",
-      "packagesPath": "C:\\Users\\Rajasekhar\\.nuget\\packages\\",
-      "outputPath": "D:\\MyWorld\\health\\hlc\\hlc-server-new\\Healthcare.Core\\obj\\",
+      "projectPath": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\Healthcare.Core\\Healthcare.Core.csproj",
+      "packagesPath": "C:\\Users\\k.rajasekhar\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\k.rajasekhar\\Documents\\hlc\\new\\hlc-server-new\\Healthcare.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Rajasekhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\k.rajasekhar\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -670,7 +670,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.308/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

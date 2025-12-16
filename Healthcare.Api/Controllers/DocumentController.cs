@@ -11,13 +11,15 @@ namespace Healthcare.Api.Controllers
     {
         private readonly IOcrService _ocrService;
         private readonly IAiService _aiService;
+        private readonly IAuditService _auditService;
         private readonly ILogger<DocumentController> _logger;
 
-        public DocumentController(IOcrService ocrService, IAiService aiService, ILogger<DocumentController> logger)
+        public DocumentController(IOcrService ocrService, IAiService aiService, ILogger<DocumentController> logger, IAuditService auditService)
         {
             _ocrService = ocrService;
             _aiService = aiService;
             _logger = logger;
+            _auditService = auditService;
         }
 
         [HttpPost("upload")]
@@ -69,6 +71,8 @@ namespace Healthcare.Api.Controllers
 
             // 4. Trigger Training (Fire and Forget)
             _ = _aiService.TriggerTrainingAsync(extractedText, "LabReport");
+
+            await _auditService.LogAsync("Document Upload", $"Uploaded file: {file.FileName} ({file.ContentType})");
 
             return Ok(new 
             { 
